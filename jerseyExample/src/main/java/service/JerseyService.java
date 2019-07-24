@@ -1,4 +1,4 @@
-package jerseyExample;
+package service;
 
 import java.util.logging.Logger;
 
@@ -32,4 +32,5 @@ public class JerseyService {
 		LOGGER.info("END");
 		return Response.status(200).entity(user).build();
 	}
+
 }
