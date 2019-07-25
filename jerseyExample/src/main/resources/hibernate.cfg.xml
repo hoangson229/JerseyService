@@ -10,9 +10,9 @@
 		<property name="hibernate.current_session_context_class">thread</property>
 
 		<!-- SIT -->
-		<property name="connection.url">jdbc:oracle:thin:@//172.17.200.75:1521/MBFPDB01</property>
-		<property name="connection.username">SIT_MCP</property>
-		<property name="connection.password">mcportal</property>
+		<property name="connection.url">jdbc:oracle:thin:@database-1.c5oxxlafwzsj.ap-southeast-1.rds.amazonaws.com:1521:ORCL</property>
+		<property name="connection.username">kiemthe229</property>
+		<property name="connection.password">123Katana</property>
 		<property name="hibernate.show_sql">true</property>
 
 		<!-- JDBC connection pool, use Hibernate internal connection pool -->
@@ -30,6 +30,7 @@
 
 		<!-- Mapping with model class containing annotations -->
 		<mapping class="sonhv.com.entity.UserEntity" />
+		<mapping class="sonhv.com.entity.Book" />
 
 		<!-- Mapping with resource query -->
 		<!-- <mapping resource="hibernate/user.xml" /> -->

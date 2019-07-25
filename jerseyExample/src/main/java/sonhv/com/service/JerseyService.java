@@ -13,6 +13,7 @@ import javax.ws.rs.core.Response;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import sonhv.com.entity.Book;
 import sonhv.com.entity.UserEntity;
 import sonhv.com.hibernate.HibernateUtils;
 
@@ -38,18 +39,20 @@ public class JerseyService {
 		Session session = factory.getCurrentSession();
 
 		List<UserEntity> employees = null;
+		List<Book> books = null;
+		
 
 		try {
 
 			session.getTransaction().begin();
 
-			String sql = "Select e from UserEntity e where id = 224661";
+			String sql = "Select  e from Book e where bookId = 1";
 
 			// Tạo đối tượng Query.
 			Query query = session.createQuery(sql);
 
 			// Thực hiện truy vấn.
-			employees = query.getResultList();
+			books = query.getResultList();
 
 			// UserDTO user = new UserDTO("sonhv", "Hoang Van Son",
 			// "0962209955");
@@ -63,7 +66,7 @@ public class JerseyService {
 			session.getTransaction().rollback();
 		}
 
-		return Response.status(200).entity(employees).build();
+		return Response.status(200).entity(books).build();
 
 	}
 
